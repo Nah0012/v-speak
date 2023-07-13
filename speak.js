@@ -1,6 +1,5 @@
 
-const startBtn = document.querySelector('#start-btn');
-const stopBtn = document.querySelector('#stop-btn');
+const toggleBtn = document.querySelector('#toggle-btn');
 const resultDiv = document.querySelector('#result-div');
 const textArea = document.querySelector('#text-area');
 const voiceNamesSelect = document.getElementById("voice-names");
@@ -9,6 +8,10 @@ const speakBtn = document.querySelector('#speak-btn');
 const pauseBtn = document.querySelector('#pause-btn');
 const resumeBtn = document.querySelector('#resume-btn');
 const cancelBtn = document.querySelector('#cancel-btn');
+const start = document.querySelector('#start');
+const stop = document.querySelector('#stop');
+
+let isRecognitionActive = false;
 
 if (!("speechSynthesis" in window)) {
   const msgElement = document.getElementById("msg");
@@ -59,11 +62,16 @@ recognition.onresult = (event) => {
   textArea.value = finalTranscript;
 }
 
-startBtn.onclick = () => {
-  recognition.start();
-}
-stopBtn.onclick = () => {
-  recognition.stop();
+toggleBtn.onclick = () => {
+  if (isRecognitionActive) {
+    recognition.stop();
+    toggleBtn.classList.toggle("active");
+  } else {
+    recognition.start();
+	toggleBtn.classList.toggle("active");
+  }
+  
+  isRecognitionActive = !isRecognitionActive;
 }
 
 //音声合成

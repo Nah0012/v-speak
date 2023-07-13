@@ -1,23 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>VOX SPEACH</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="frame">
+<h1>VOX SPEACH</h1>
 <p id="msg"></p>
-<button id="start-btn">start</button>
-<button id="stop-btn">stop</button>
 <br>
-<textarea id="text-area" rows="5"></textarea>
+<textarea id="text-area" cols="50" rows="5" placeholder="ここにテキストを入力"></textarea>
+<button id="toggle-btn">
+	<svg height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 470 470" xml:space="preserve">
+		<g>
+			<path d="M235,302.296c47.177,0,85.423-38.245,85.423-85.423V85.423C320.423,38.245,282.177,0,235,0s-85.423,38.245-85.423,85.423
+			v131.451C149.577,264.051,187.823,302.296,235,302.296z" />
+			<path d="M350.423,136.148v30h15v50.726c0,71.915-58.508,130.423-130.423,130.423s-130.423-58.507-130.423-130.423v-50.726h15v-30
+			h-45v80.726C74.577,300.273,138.551,369,220,376.589V440h-90.444v30h210.889v-30H250v-63.411
+			c81.449-7.589,145.423-76.317,145.423-159.716v-80.726H350.423z" />
+		</g>
+	</svg>
+</button>
 <div id="result-div"></div>
 <br>
-<textarea id="status" cols="100" rows="1">
-</textarea>
-<br>
-
+<div id="status" cols="100" rows="1">
+</div>
 <br>
 <select id="voice-names"></select>
 <br>
 <input id="rate" type="range" min="0" max="2" step="0.25" value="1"> (speed)
 <br>
+<div id="wrapper">
 <button id="speak-btn">再生</button>
 <button id="pause-btn">一時停止</button>
 <button id="cancel-btn">停止</button>
 <button id="resume-btn">再開</button>
+</div>
 <br>
 <br>
 <select id="vox-names">
@@ -43,12 +63,14 @@
 	<option value="19">九州そら(ささやき)</option>
 </select>
 <br>
-<button onClick="play()">play</button>
+<button onClick="play()">再生</button>
 <br>
-VOICEVOX 0.14.4
+version:VOICEVOX 0.14.4
 <br>
 注意:APIKeyを使用していないため、VOICEVOXの再生には少し時間がかかります。
 
 <script type="text/javascript" src="speak.js"></script>
 
 <script src="./TtsQuestV3Voicevox.js"></script>
+</div>
+</body>
