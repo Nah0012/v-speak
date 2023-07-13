@@ -1,9 +1,54 @@
-<div class="recPlayer">
-	<div class="recPlayer__tools">
-		<button class="recPlayer__recBtn">録音</button>
-	</div>
-	<div class="recPlayer__results">
-		<ul></ul>
-	</div>
-</div>
+<p id="msg"></p>
+<button id="start-btn">start</button>
+<button id="stop-btn">stop</button>
+<br>
+<textarea id="text-area" rows="5"></textarea>
+<div id="result-div"></div>
+<br>
+<textarea id="status" cols="100" rows="1">
+</textarea>
+<br>
+
+<br>
+<select id="voice-names"></select>
+<br>
+<input id="rate" type="range" min="0" max="2" step="0.25" value="1"> (speed)
+<br>
+<button id="speak-btn">再生</button>
+<button id="pause-btn">一時停止</button>
+<button id="cancel-btn">停止</button>
+<button id="resume-btn">再開</button>
+<br>
+<br>
+<select id="vox-names">
+	<option value="2">四国めたん(ノーマル)</option>
+	<option value="0">四国めたん(あまあま)</option>
+	<option value="6">四国めたん(ツンツン)</option>
+	<option value="4">四国めたん(セクシー)</option>
+	<option value="36">四国めたん(ささやき)</option>
+	<option value="37">四国めたん(ヒソヒソ)</option>
+	<option value="3">ずんだもん(ノーマル)</option>
+	<option value="1">ずんだもん(あまあま)</option>
+	<option value="7">ずんだもん(ツンツン)</option>
+	<option value="5">ずんだもん(セクシー)</option>
+	<option value="22">ずんだもん(ささやき)</option>
+	<option value="38">ずんだもん(ヒソヒソ)</option>
+	<option value="8">春日部つむぎ(ノーマル)</option>
+	<option value="10">雨晴はう(ノーマル)</option>
+	<option value="9">波音リツ(ノーマル)</option>
+	<option value="16">九州そら(ノーマル)</option>
+	<option value="15">九州そら(あまあま)</option>
+	<option value="18">九州そら(ツンツン)</option>
+	<option value="17">九州そら(セクシー)</option>
+	<option value="19">九州そら(ささやき)</option>
+</select>
+<br>
+<button onClick="play()">play</button>
+<br>
+VOICEVOX 0.14.4
+<br>
+注意:APIKeyを使用していないため、VOICEVOXの再生には少し時間がかかります。
+
 <script type="text/javascript" src="speak.js"></script>
+
+<script src="./TtsQuestV3Voicevox.js"></script>
