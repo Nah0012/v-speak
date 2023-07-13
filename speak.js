@@ -43,6 +43,8 @@ recognition.onerror= function(){
 };
 recognition.onsoundend = function(){
   document.getElementById('status').innerHTML = "停止中";
+  toggleBtn.classList.remove("active");
+  isRecognitionActive = false;
 };
 
 let finalTranscript = ''; // 確定した(黒の)認識結果
@@ -68,7 +70,7 @@ toggleBtn.onclick = () => {
     toggleBtn.classList.toggle("active");
   } else {
     recognition.start();
-	toggleBtn.classList.toggle("active");
+  toggleBtn.classList.toggle("active");
   }
   
   isRecognitionActive = !isRecognitionActive;
